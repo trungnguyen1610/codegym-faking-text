@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        Type anything here
+    </h2>
+    <form name="form">
+        <textarea name="text" id="" cols="30" rows="10" onkeydown="printFakeText()"></textarea>
+    </form>
+    <script>
+        let arr = new Array();
+        let text = "";
+        arr[1] = 'W';
+        arr[2] = 'H';
+        arr[3] = 'Y';
+        arr[4] = ' ';
+        arr[5] = 'A';
+        arr[6] = 'R';
+        arr[7] = 'E';
+        arr[8] = ' ';
+        arr[9] = 'Y';
+        arr[10] = 'O';
+        arr[11] = 'U';
+        arr[12] = ' ';
+        arr[13] = 'G';
+        arr[14] = 'E';
+        arr[15] = 'I';
+        arr[16] = ' ';
+        arr[17] = 'M';
+        arr[18] = 'I';
+        arr[19] = 'S';
+        arr[20] = 'T';
+        arr[21] = 'E';
+        arr[22] = 'R';
+        function printFakeText(){
+            let input = document.form.text.value;
+            console.log(input)
+            let length = input.length;
+            if(length>0){
+                for(let i=1;i<=length;i++){
+                    text+=arr[i];
+                    if (i == 23) {
+                        document.form.text.value = "";
+                          text="";
+                    }
+                }
+               
+            }
+            
+            document.form.text.value = text;
+            text = "";
+            setTimeout(printFakeText,1)
+        }
+       
+    </script>
+</body>
+</html>
